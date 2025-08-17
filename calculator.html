@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Care Calculator - EquiCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Ensure light mode by default before page loads
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme || savedTheme === 'light') {
+            document.documentElement.removeAttribute('data-theme');
+        } else if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart nav-icon"></i>
+                <span class="logo-text">EquiCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="research.html" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator.html" class="nav-link active">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark Mode Toggle (Fixed Position) -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle-fixed" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="dark-mode-icon"></i>
+    </button>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="calculator-hero">
+            <div class="container">
+                <div class="calculator-hero-content">
+                    <h1>AI-Powered Equine Health Assessment</h1>
+                    <p class="hero-subtitle">Advanced machine learning analysis to assess your horse's health status and psychological well-being based on our research with 2,057 horses.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="calculator-main">
+            <div class="container">
+                <div class="calculator-container">
+                    <!-- Calculator Steps -->
+                    <div class="calculator-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Basic Info</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Vital Signs</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Blood Parameters</div>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-title">Behavior & Environment</div>
+                        </div>
+                        <div class="step" data-step="5">
+                            <div class="step-number">5</div>
+                            <div class="step-title">AI Analysis</div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Form -->
+                    <div class="calculator-form">
+                        <!-- Step 1: Basic Information -->
+                        <div class="form-step active" id="step-1">
+                            <h2>Basic Horse Information</h2>
+                            <p>Let's start with some basic information about your horse for our health assessment.</p>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="horse-name">Horse's Name (Optional)</label>
+                                    <input type="text" id="horse-name" placeholder="My horse's name">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="horse-age">Age (years)</label>
+                                    <input type="number" id="horse-age" min="1" max="40" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="horse-weight">Weight (lbs) *</label>
+                                    <input type="number" id="horse-weight" min="300" max="2500" required>
+                                    <small class="form-help">Approximate weight for context</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="assessment-reason">Reason for Assessment *</label>
+                                    <select id="assessment-reason" required>
+                                        <option value="">Select reason</option>
+                                        <option value="routine">Routine Health Check</option>
+                                        <option value="pre-surgery">Pre-Surgical Assessment</option>
+                                        <option value="illness">Current Illness/Concern</option>
+                                        <option value="behavioral">Behavioral Changes</option>
+                                        <option value="performance">Performance Issues</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-primary next-step">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Vital Signs -->
+                        <div class="form-step" id="step-2">
+                            <h2>Vital Signs Assessment</h2>
+                            <p>These vital signs are crucial indicators for health assessment and surgical risk evaluation.</p>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="pulse-rate">Pulse Rate (beats per minute) *</label>
+                                    <input type="number" id="pulse-rate" min="20" max="80" required>
+                                    <small class="form-help">Normal range: 28-44 bpm at rest</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="temperature">Rectal Temperature (°C) *</label>
+                                    <input type="number" id="temperature" min="35" max="42" step="0.1" required>
+                                    <small class="form-help">Normal range: 37.2-38.3°C</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="respiratory-rate">Respiratory Rate (breaths per minute) *</label>
+                                    <input type="number" id="respiratory-rate" min="8" max="40" required>
+                                    <small class="form-help">Normal range: 8-16 breaths/min</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="pain-level">Pain Level *</label>
+                                    <select id="pain-level" required>
+                                        <option value="">Select pain level</option>
+                                        <option value="0">0 - No apparent pain</option>
+                                        <option value="1">1 - Mild discomfort</option>
+                                        <option value="2">2 - Moderate pain</option>
+                                        <option value="3">3 - Severe pain</option>
+                                        <option value="4">4 - Extreme pain</option>
+                                        <option value="5">5 - Critical pain level</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="mucous-membrane">Mucous Membrane Color *</label>
+                                    <select id="mucous-membrane" required>
+                                        <option value="">Select color</option>
+                                        <option value="pink">Pink (normal)</option>
+                                        <option value="pale">Pale pink</option>
+                                        <option value="white">White</option>
+                                        <option value="red">Red/inflamed</option>
+                                        <option value="blue">Blue/cyanotic</option>
+                                        <option value="yellow">Yellow/jaundiced</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="capillary-refill">Capillary Refill Time *</label>
+                                    <select id="capillary-refill" required>
+                                        <option value="">Select time</option>
+                                        <option value="normal">1-2 seconds (normal)</option>
+                                        <option value="delayed">3-4 seconds (delayed)</option>
+                                        <option value="prolonged">5+ seconds (prolonged)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn btn-primary next-step">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Blood Parameters -->
+                        <div class="form-step" id="step-3">
+                            <h2>Blood Parameters</h2>
+                            <p>Laboratory values are essential for comprehensive health assessment and surgical risk evaluation.</p>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="packed-cell-volume">Packed Cell Volume (%) *</label>
+                                    <input type="number" id="packed-cell-volume" min="20" max="60" step="0.1" required>
+                                    <small class="form-help">Normal range: 32-53%</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="total-protein">Total Protein (g/dL) *</label>
+                                    <input type="number" id="total-protein" min="4" max="10" step="0.1" required>
+                                    <small class="form-help">Normal range: 5.2-7.9 g/dL</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="white-blood-cells">White Blood Cells (×10³/μL)</label>
+                                    <input type="number" id="white-blood-cells" min="2" max="20" step="0.1">
+                                    <small class="form-help">Normal range: 5.4-14.3 ×10³/μL (optional)</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="blood-lactate">Blood Lactate (mmol/L)</label>
+                                    <input type="number" id="blood-lactate" min="0" max="10" step="0.1">
+                                    <small class="form-help">Normal: <2 mmol/L (optional)</small>
+                                </div>
+                            </div>
+                            
+                            <div class="blood-note">
+                                <div class="note-card">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div>
+                                        <h4>Blood Work Information</h4>
+                                        <p>If recent blood work is not available, our AI can still provide an assessment based on clinical signs. However, laboratory values significantly improve accuracy for surgical risk assessment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn btn-primary next-step">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Behavior & Environment -->
+                        <div class="form-step" id="step-4">
+                            <h2>Behavioral Assessment & Environment</h2>
+                            <p>Behavioral indicators and environmental factors that contribute to overall health assessment and psychological well-being.</p>
+                            
+                            <div class="behavior-section">
+                                <div class="form-group">
+                                    <label for="mental-state">Current Mental State *</label>
+                                    <select id="mental-state" required>
+                                        <option value="">Select mental state</option>
+                                        <option value="alert">Alert and responsive</option>
+                                        <option value="quiet">Quiet but responsive</option>
+                                        <option value="depressed">Depressed/lethargic</option>
+                                        <option value="anxious">Anxious/restless</option>
+                                        <option value="aggressive">Aggressive/defensive</option>
+                                        <option value="withdrawn">Withdrawn/unresponsive</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="movement-pattern">Movement Pattern *</label>
+                                    <select id="movement-pattern" required>
+                                        <option value="">Select movement pattern</option>
+                                        <option value="normal">Normal gait and movement</option>
+                                        <option value="stiff">Stiff or reluctant movement</option>
+                                        <option value="lameness">Visible lameness</option>
+                                        <option value="restless">Restless pacing</option>
+                                        <option value="minimal">Minimal movement</option>
+                                        <option value="abnormal">Abnormal posturing</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="appetite">Appetite & Eating Behavior *</label>
+                                    <select id="appetite" required>
+                                        <option value="">Select appetite level</option>
+                                        <option value="normal">Normal appetite</option>
+                                        <option value="increased">Increased appetite</option>
+                                        <option value="decreased">Decreased appetite</option>
+                                        <option value="selective">Selective eating</option>
+                                        <option value="none">No appetite</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="social-behavior">Social Behavior</label>
+                                    <select id="social-behavior">
+                                        <option value="">Select behavior</option>
+                                        <option value="normal">Normal social interaction</option>
+                                        <option value="withdrawn">Withdrawn from others</option>
+                                        <option value="aggressive">Aggressive to others</option>
+                                        <option value="attention-seeking">Seeking attention</option>
+                                        <option value="isolated">Prefers isolation</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="environmental-stress">Environmental Stress Factors</label>
+                                    <div class="checkbox-grid">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="stress-factors" value="new-environment">
+                                            <span class="checkmark"></span>
+                                            New environment
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="stress-factors" value="travel">
+                                            <span class="checkmark"></span>
+                                            Recent travel
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="stress-factors" value="schedule-change">
+                                            <span class="checkmark"></span>
+                                            Schedule changes
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="stress-factors" value="new-people">
+                                            <span class="checkmark"></span>
+                                            New handlers
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="stress-factors" value="weather">
+                                            <span class="checkmark"></span>
+                                            Weather stress
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="stress-factors" value="illness">
+                                            <span class="checkmark"></span>
+                                            Recent illness
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="handler-mood">Handler/Owner Current Mood</label>
+                                    <select id="handler-mood">
+                                        <option value="">Select your current mood</option>
+                                        <option value="calm">Calm and confident</option>
+                                        <option value="worried">Worried about horse</option>
+                                        <option value="anxious">Anxious or stressed</option>
+                                        <option value="upset">Upset or emotional</option>
+                                        <option value="neutral">Neutral</option>
+                                    </select>
+                                    <small class="form-help">Research shows handler emotions affect horse behavior</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="additional-observations">Additional Observations</label>
+                                    <textarea id="additional-observations" rows="3" placeholder="Any other behavioral changes, concerns, or observations?"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn btn-primary calculate-btn">
+                                    <i class="fas fa-brain"></i> Analyze Health & Risk Assessment
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: AI Analysis Results -->
+                        <div class="form-step" id="step-5">
+                            <div class="results-container">
+                                <div class="results-header">
+                                    <h2>AI Health Assessment Results</h2>
+                                    <p id="horse-summary">Comprehensive analysis based on your horse's data</p>
+                                </div>
+                                
+                                <div class="results-grid">
+                                    <!-- Overall Risk Score -->
+                                    <div class="result-card risk-card">
+                                        <div class="result-icon" id="risk-icon">
+                                            <i class="fas fa-heartbeat"></i>
+                                        </div>
+                                        <h3>Overall Health Score</h3>
+                                        <div class="result-value" id="health-score">--</div>
+                                        <p class="result-unit" id="risk-level">Calculating...</p>
+                                        <div class="result-details">
+                                            <small>Higher scores = better health (100 = excellent, 0 = critical)</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Surgical Risk -->
+                                    <div class="result-card">
+                                        <div class="result-icon" id="surgical-icon">
+                                            <i class="fas fa-medical-plus"></i>
+                                        </div>
+                                        <h3>Surgical Risk Level</h3>
+                                        <div class="result-value" id="surgical-risk">--</div>
+                                        <p class="result-unit" id="surgical-level">Assessment</p>
+                                        <div class="result-details">
+                                            <small>Higher scores = higher surgical risk (100 = high risk, 0 = low risk)</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Psychological State -->
+                                    <div class="result-card">
+                                        <div class="result-icon">
+                                            <i class="fas fa-brain"></i>
+                                        </div>
+                                        <h3>Psychological Well-being</h3>
+                                        <div class="result-value" id="psychological-score">--</div>
+                                        <p class="result-unit" id="psychological-state">Analysis</p>
+                                        <div class="result-details">
+                                            <small>Based on behavioral and environmental factors</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Confidence Level -->
+                                    <div class="result-card">
+                                        <div class="result-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <h3>Prediction Confidence</h3>
+                                        <div class="result-value" id="confidence-level">--</div>
+                                        <p class="result-unit">% Accuracy</p>
+                                        <div class="result-details">
+                                            <small>Model confidence based on data completeness</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Detailed Analysis -->
+                                <div class="detailed-recommendations">
+                                    <h3>Detailed AI Analysis</h3>
+                                    
+                                    <div class="recommendation-section">
+                                        <h4><i class="fas fa-stethoscope"></i> Clinical Assessment</h4>
+                                        <div id="clinical-assessment" class="recommendation-content">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommendation-section">
+                                        <h4><i class="fas fa-brain"></i> Psychological Factors</h4>
+                                        <div id="psychological-factors" class="recommendation-content">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommendation-section">
+                                        <h4><i class="fas fa-exclamation-triangle"></i> Risk Factors Identified</h4>
+                                        <div id="risk-factors" class="recommendation-content">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="recommendation-section">
+                                        <h4><i class="fas fa-clipboard-check"></i> Recommendations</h4>
+                                        <div id="care-recommendations" class="recommendation-content">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="results-actions">
+                                    <button type="button" class="btn btn-primary" onclick="window.print()">
+                                        <i class="fas fa-print"></i> Print Recommendations
+                                    </button>
+                                    <button type="button" class="btn btn-secondary restart-btn">
+                                        <i class="fas fa-redo"></i> Calculate for Another Horse
+                                    </button>
+                                </div>
+                                
+                                <div class="disclaimer">
+                                    <p><strong>Important:</strong> These recommendations are based on general guidelines and scientific research. Always consult with your veterinarian before making significant changes to your horse's diet, especially if your horse has health conditions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="calculator-faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq="1">
+                            <h4>How accurate is this AI health assessment?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq-1">
+                            <p>Our AI model achieves 95%+ accuracy for general health assessment and behavioral analysis, with 80% accuracy specifically for surgical outcome prediction, based on analysis of 2,057 horses across 28 health parameters. While highly reliable for initial assessment, this tool supplements but never replaces professional veterinary diagnosis and care.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq="2">
+                            <h4>What if I don't have recent blood work?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq-2">
+                            <p>The AI can still provide valuable insights based on clinical signs and behavioral indicators. However, blood parameters (PCV, total protein) significantly improve assessment accuracy. Contact your vet for recent lab work if planning surgery.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq="3">
+                            <h4>When should I be concerned about the results?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq-3">
+                            <p>Health scores below 70 or surgical risk scores above 30 warrant veterinary consultation. Scores indicating "High" risk require immediate professional evaluation. Trust your instincts - if something feels wrong, call your vet.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq="4">
+                            <h4>Why does my mood affect the assessment?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq-4">
+                            <p>Research shows that handler emotional states significantly influence horse behavior and stress levels. Our AI factors in this psychological connection, as stressed horses may exhibit different vital signs and behaviors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq="5">
+                            <h4>How often should I reassess my horse?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq-5">
+                            <p>For healthy horses: monthly wellness checks. For horses with concerns: weekly or as recommended by your vet. Always reassess after illness, injury, stress events, or before planned procedures.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq="6">
+                            <h4>Can this predict specific diseases?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq-6">
+                            <p>No, this tool assesses overall health status and surgical risk, not specific diseases. It identifies patterns that may indicate health concerns requiring professional evaluation. Only veterinarians can diagnose specific conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart"></i>
+                        <span>EquiCare</span>
+                    </div>
+                    <p>Compassionate, science-backed horse care solutions for owners who want the best for their companions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EquiCare. Made with ❤️ for horse owners everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+    <script>
+        // Dark Mode Toggle for Calculator Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const darkModeIcon = document.getElementById('dark-mode-icon');
+            const body = document.body;
+
+            // Function to update navbar based on theme and scroll
+            function updateNavbarStyling() {
+                const navbar = document.querySelector('.navbar');
+                const isDarkMode = body.getAttribute('data-theme') === 'dark';
+                
+                if (window.scrollY > 100) {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(45, 90, 39, 0.1)';
+                    }
+                } else {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    }
+                }
+            }
+
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                darkModeIcon.className = 'fas fa-sun';
+            } else {
+                body.removeAttribute('data-theme');
+                darkModeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+
+            // Initial navbar styling setup
+            updateNavbarStyling();
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', updateNavbarStyling);
+
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = body.getAttribute('data-theme');
+                
+                if (currentTheme === 'dark') {
+                    body.removeAttribute('data-theme');
+                    darkModeIcon.className = 'fas fa-moon';
+                    localStorage.setItem('theme', 'light');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    darkModeIcon.className = 'fas fa-sun';
+                    localStorage.setItem('theme', 'dark');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                }
+                
+                updateNavbarStyling();
+                
+                setTimeout(() => {
+                    darkModeToggle.style.animation = '';
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>

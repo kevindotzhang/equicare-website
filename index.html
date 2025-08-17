@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EquiCare - Compassionate Horse Care Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Ensure light mode by default before page loads
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme || savedTheme === 'light') {
+            document.documentElement.removeAttribute('data-theme');
+        } else if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart nav-icon"></i>
+                <span class="logo-text">EquiCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="research.html" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator.html" class="nav-link">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark Mode Toggle (Fixed Position) -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle-fixed" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="dark-mode-icon"></i>
+    </button>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Your Horse's Health, 
+                        <span class="highlight">Our Passion</span>
+                    </h1>
+                    <p class="hero-description">
+                        Every horse owner knows that feeling - the worry when something seems off, 
+                        the relief when you know you're making the right decision. EquiCare combines 
+                        scientific research with the intuition you already have, giving you confidence 
+                        in caring for your beloved companion.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="calculator.html" class="btn btn-primary">
+                            <i class="fas fa-calculator"></i>
+                            Try Our Calculator
+                        </a>
+                        <a href="#learn-more" class="btn btn-secondary">
+                            <i class="fas fa-heart"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <img src="horse image 2.png" alt="Beautiful horse reaching out" class="hero-horse-image">
+                        <div class="frame-overlay"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-heart poppable">💚</div>
+                <div class="floating-heart poppable">🐴</div>
+                <div class="floating-heart poppable">💙</div>
+                <div class="floating-heart poppable">🌟</div>
+                <div class="floating-heart poppable">🍎</div>
+                <div class="floating-heart poppable">🥕</div>
+                <div class="floating-heart poppable">💕</div>
+                <div class="floating-heart poppable">🦄</div>
+                <div class="floating-heart poppable">🌾</div>
+                <div class="floating-heart poppable">🌸</div>
+                <div class="floating-heart poppable">💖</div>
+                <div class="floating-heart poppable">🐎</div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="learn-more" class="features">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Why Horse Owners Trust EquiCare</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    We understand the deep bond between you and your horse. That's why we've created tools 
+                    that respect both your experience and the latest veterinary science.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Research-Backed</h3>
+                        <p>Our recommendations are based on peer-reviewed studies and years of field research with real horses and their owners.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Owner-Centered</h3>
+                        <p>Built by horse people, for horse people. We know you know your horse best - our tools help amplify your instincts.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Practical Tools</h3>
+                        <p>Simple, effective calculators and assessments that give you actionable insights when you need them most.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Stories from Fellow Horse Owners</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-aos="fade-right" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <p>"EquiCare helped me feel confident about my mare's nutrition plan. The calculator gave me the data I needed, but the approach felt so much more personal than other tools I've tried."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Sarah M.</h4>
+                                <span>Quarter Horse Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <p>"As a new horse owner, I was overwhelmed by all the advice out there. EquiCare's research-backed approach gave me the foundation I needed to make good decisions."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Mike R.</h4>
+                                <span>Thoroughbred Enthusiast</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" data-aos="fade-left" data-aos-delay="300">
+                        <div class="testimonial-content">
+                            <p>"The team behind EquiCare really gets it. You can tell they've been where we are - worried about our horses and wanting to do right by them."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Jessica L.</h4>
+                                <span>Arabian Horse Breeder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <h2 data-aos="fade-up" data-aos-delay="100">Ready to Give Your Horse the Best Care?</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Join thousands of horse owners who trust EquiCare for science-backed, compassionate guidance.</p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                        <a href="calculator.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Start with Our Calculator
+                        </a>
+                        <a href="research.html" class="btn btn-secondary btn-large">
+                            <i class="fas fa-book"></i>
+                            Explore Our Research
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Indicators Section -->
+        <section class="trust-indicators">
+            <div class="container">
+                <div class="trust-content" data-aos="fade-up">
+                    <h3>Trusted by Horse Owners Everywhere</h3>
+                    <div class="trust-stats">
+                        <div class="trust-stat" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-number">10,000+</div>
+                                <div class="stat-label">Happy Horse Owners</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-stat" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-number">150+</div>
+                                <div class="stat-label">Veterinary Partners</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-stat" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-number">95%+</div>
+                                <div class="stat-label">Assessment Accuracy</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-stat" data-aos="fade-up" data-aos-delay="400">
+                            <div class="stat-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-number">2,057</div>
+                                <div class="stat-label">Horses in Our Research</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comfort-message">
+                        <p><i class="fas fa-quote-left"></i> Every horse owner knows that feeling when something doesn't seem right with their companion. I founded EquiCare because I believe combining scientific research with that intuitive bond creates the best care possible. We're here to support you and your horse, every step of the way. <i class="fas fa-quote-right"></i></p>
+                        <cite>- Kaitlyn Zhang, Founder & CEO</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container">
+        <div id="chatbot-toggle" class="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-tooltip">Need help? Chat with us!</span>
+        </div>
+        
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <h4>EquiCare Assistant</h4>
+                <button id="chatbot-close" class="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hi there! I'm here to help you with any questions about horse care. What would you like to know?
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input" placeholder="Ask me about horse care...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart"></i>
+                        <span>EquiCare</span>
+                    </div>
+                    <p>Compassionate, science-backed horse care solutions for owners who want the best for their companions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EquiCare. Made with ❤️ for horse owners everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EquiCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        // Ensure light mode by default before page loads
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme || savedTheme === 'light') {
+            document.documentElement.removeAttribute('data-theme');
+        } else if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart nav-icon"></i>
+                <span class="logo-text">EquiCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link active">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="research.html" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator.html" class="nav-link">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark Mode Toggle (Fixed Position) -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle-fixed" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="dark-mode-icon"></i>
+    </button>
+
+    <main>
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-content">
+                    <h1>Our Story</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team">
+            <div class="container">
+                <div class="team-intro">
+                    <h2 data-aos="fade-up">Meet the People Behind EquiCare</h2>
+                </div>
+                
+                <div class="team-categories">
+                    <!-- Founders -->
+                    <div class="team-category">
+                        <h3 class="category-title" data-aos="fade-up" data-aos-delay="100">Our Founders</h3>
+                        <div class="founders-grid">
+                            <div class="team-member featured" data-aos="fade-right" data-aos-delay="200">
+                                <div class="member-photo">
+                                    <div class="photo-placeholder">
+                                        <i class="fas fa-user"></i>
+                                        <p>Kaitlyn's Photo</p>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Kaitlyn Zhang</h4>
+                                    <p class="member-role">Founder & CEO</p>
+                                    <p class="member-bio">Kaitlyn's passion for horses began in childhood and evolved into a mission to revolutionize equine healthcare through technology. As a data scientist with experience in machine learning and AI, she recognized the potential to combine cutting-edge algorithms with veterinary science to help horse owners make better informed decisions about their companions' health.</p>
+                                    <div class="member-credentials">
+                                        <span>Data Science & AI Specialist</span>
+                                        <span>Machine Learning Engineer</span>
+                                        <span>Equine Health Advocate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="team-member featured" data-aos="fade-left" data-aos-delay="300">
+                                <div class="member-photo">
+                                    <div class="photo-placeholder">
+                                        <i class="fas fa-user"></i>
+                                        <p>Kevin's Photo</p>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Kevin Zhang</h4>
+                                    <p class="member-role">Co-Founder & CTO</p>
+                                    <p class="member-bio">Kevin brings deep technical expertise in software architecture and platform development to EquiCare. With a background in building scalable systems and user-centered design, he ensures that our complex AI models are accessible through intuitive interfaces that horse owners can trust and easily navigate.</p>
+                                    <div class="member-credentials">
+                                        <span>Software Architecture</span>
+                                        <span>Full-Stack Development</span>
+                                        <span>Platform Engineering</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision & Values Section -->
+        <section class="mission-vision-values">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Our Foundation</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">The principles that guide everything we do at EquiCare</p>
+                
+                <div class="interactive-tabs" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" data-tab="mission" data-aos="zoom-in" data-aos-delay="300">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Our Mission</span>
+                        </button>
+                        <button class="tab-btn" data-tab="vision" data-aos="zoom-in" data-aos-delay="400">
+                            <i class="fas fa-eye"></i>
+                            <span>Our Vision</span>
+                        </button>
+                        <button class="tab-btn" data-tab="values" data-aos="zoom-in" data-aos-delay="500">
+                            <i class="fas fa-heart"></i>
+                            <span>Core Values</span>
+                        </button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-panel active" id="mission">
+                            <div class="content-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3>Our Mission</h3>
+                                <p>To revolutionize equine healthcare by making advanced AI and scientific research accessible to every horse owner, empowering them to make informed decisions that enhance their horses' health, happiness, and quality of life.</p>
+                                <div class="highlight-points">
+                                    <div class="point">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Bridge the gap between science and practice</span>
+                                    </div>
+                                    <div class="point">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Empower horse owners with knowledge</span>
+                                    </div>
+                                    <div class="point">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Improve equine health outcomes globally</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="vision">
+                            <div class="content-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3>Our Vision</h3>
+                                <p>A world where every horse receives optimal care through the perfect harmony of cutting-edge technology, scientific knowledge, and the deep bond between horses and their human companions.</p>
+                                <div class="highlight-points">
+                                    <div class="point">
+                                        <i class="fas fa-globe"></i>
+                                        <span>Global standard for equine health technology</span>
+                                    </div>
+                                    <div class="point">
+                                        <i class="fas fa-atom"></i>
+                                        <span>Continuous innovation in AI and veterinary science</span>
+                                    </div>
+                                    <div class="point">
+                                        <i class="fas fa-hands-helping"></i>
+                                        <span>Stronger partnerships between owners and veterinarians</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="values">
+                            <div class="content-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>Core Values</h3>
+                                <p>The fundamental beliefs that shape our approach to equine care and drive our commitment to excellence.</p>
+                                <div class="values-grid">
+                                    <div class="value-item">
+                                        <div class="value-icon">
+                                            <i class="fas fa-microscope"></i>
+                                        </div>
+                                        <h4>Scientific Integrity</h4>
+                                        <p>Every recommendation is backed by peer-reviewed research and rigorous testing.</p>
+                                    </div>
+                                    <div class="value-item">
+                                        <div class="value-icon">
+                                            <i class="fas fa-horse-head"></i>
+                                        </div>
+                                        <h4>Horse-First Approach</h4>
+                                        <p>The welfare and well-being of horses is at the center of everything we do.</p>
+                                    </div>
+                                    <div class="value-item">
+                                        <div class="value-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <h4>Community Driven</h4>
+                                        <p>Built by horse people, for horse people, with input from our global community.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 data-aos="fade-up">Join Our Community</h2>
+                    <p data-aos="fade-up" data-aos-delay="100">Become part of a community that puts horse welfare first, backed by science and guided by compassion.</p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                        <a href="calculator.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Try Our Calculator
+                        </a>
+                        <a href="research.html" class="btn btn-secondary btn-large">
+                            <i class="fas fa-book"></i>
+                            Explore Our Research
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart"></i>
+                        <span>EquiCare</span>
+                    </div>
+                    <p>Compassionate, science-backed horse care solutions for owners who want the best for their companions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EquiCare. Made with ❤️ for horse owners everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+
+        // Dark Mode Toggle for About Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const darkModeIcon = document.getElementById('dark-mode-icon');
+            const body = document.body;
+
+            // Function to update navbar based on theme and scroll
+            function updateNavbarStyling() {
+                const navbar = document.querySelector('.navbar');
+                const isDarkMode = body.getAttribute('data-theme') === 'dark';
+                
+                if (window.scrollY > 100) {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(45, 90, 39, 0.1)';
+                    }
+                } else {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    }
+                }
+            }
+
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                darkModeIcon.className = 'fas fa-sun';
+            } else {
+                body.removeAttribute('data-theme');
+                darkModeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+
+            // Initial navbar styling setup
+            updateNavbarStyling();
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', updateNavbarStyling);
+
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = body.getAttribute('data-theme');
+                
+                if (currentTheme === 'dark') {
+                    body.removeAttribute('data-theme');
+                    darkModeIcon.className = 'fas fa-moon';
+                    localStorage.setItem('theme', 'light');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    darkModeIcon.className = 'fas fa-sun';
+                    localStorage.setItem('theme', 'dark');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                }
+                
+                updateNavbarStyling();
+                
+                setTimeout(() => {
+                    darkModeToggle.style.animation = '';
+                }, 600);
+            });
+
+            // Interactive Tabs Functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and panels
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding panel
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

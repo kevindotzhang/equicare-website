@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EquiCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        // Ensure light mode by default before page loads
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme || savedTheme === 'light') {
+            document.documentElement.removeAttribute('data-theme');
+        } else if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart nav-icon"></i>
+                <span class="logo-text">EquiCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="research.html" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator.html" class="nav-link">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark Mode Toggle (Fixed Position) -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle-fixed" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="dark-mode-icon"></i>
+    </button>
+
+    <main>
+        <!-- Contact Hero Section -->
+        <section class="minimal-contact-hero">
+            <div class="container">
+                <div class="contact-hero-content">
+                    <h1>Contact</h1>
+                    <p>Whether you've got a question about our tools, want to share your horse's story, or are interested in collaborating with us, we'd love to hear from you.</p>
+                    <p class="direct-email">You can also reach us directly at <a href="mailto:hello@equicare.life">hello@equicare.life</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-content-wide">
+                    <h2 class="contact-form-title" data-aos="fade-up">Send us a message</h2>
+                    <div class="contact-form-container" data-aos="fade-up" data-aos-delay="100">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic...</option>
+                                    <option value="general">General Question</option>
+                                    <option value="calculator">Calculator Support</option>
+                                    <option value="research">Research Inquiry</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="feedback">Feedback or Suggestion</option>
+                                    <option value="technical">Technical Issue</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="horse-info">Tell us about your horse (optional)</label>
+                                <input type="text" id="horse-info" name="horse-info" placeholder="Breed, age, discipline, etc.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="We'd love to hear from you..."></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    I'd like to receive updates about EquiCare research and new features
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="calculator-faq">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Quick answers to common questions. Don't see yours? Feel free to reach out!
+                </p>
+                
+                <div class="faq-list" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How quickly do you respond to messages?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call our support line.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I schedule a consultation about my horse's specific needs?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>While we can't provide veterinary advice, we're happy to discuss how our tools and research might be relevant to your horse's situation. Please mention this in your message and we'll schedule a call.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Do you offer partnerships with veterinarians or equine professionals?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We're always interested in collaborating with equine professionals. Please select "Partnership Opportunity" in the contact form and tell us about your practice or organization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I contribute to your research or share my horse's data?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We'd love to hear from horse owners who are interested in contributing to our research. Please select "Research Inquiry" and we'll share information about current studies and participation opportunities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Is my information kept private?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. We take privacy seriously and will never share your contact information or personal details without your explicit consent. Your data is used only to respond to your inquiry and provide updates if you opt in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 data-aos="fade-up">Ready to Get Started?</h2>
+                    <p data-aos="fade-up" data-aos-delay="100">While you're here, why not try our tools and explore our research?</p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                        <a href="calculator.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Try Our Calculator
+                        </a>
+                        <a href="research.html" class="btn btn-secondary btn-large">
+                            <i class="fas fa-book"></i>
+                            Explore Our Research
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart"></i>
+                        <span>EquiCare</span>
+                    </div>
+                    <p>Compassionate, science-backed horse care solutions for owners who want the best for their companions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EquiCare. Made with ❤️ for horse owners everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+
+        // Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const darkModeIcon = document.getElementById('dark-mode-icon');
+            const body = document.body;
+
+            // Function to update navbar based on theme and scroll
+            function updateNavbarStyling() {
+                const navbar = document.querySelector('.navbar');
+                const isDarkMode = body.getAttribute('data-theme') === 'dark';
+                
+                if (window.scrollY > 100) {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(45, 90, 39, 0.1)';
+                    }
+                } else {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    }
+                }
+            }
+
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                darkModeIcon.className = 'fas fa-sun';
+            } else {
+                body.removeAttribute('data-theme');
+                darkModeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+
+            // Initial navbar styling setup
+            updateNavbarStyling();
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', updateNavbarStyling);
+
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = body.getAttribute('data-theme');
+                
+                if (currentTheme === 'dark') {
+                    body.removeAttribute('data-theme');
+                    darkModeIcon.className = 'fas fa-moon';
+                    localStorage.setItem('theme', 'light');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    darkModeIcon.className = 'fas fa-sun';
+                    localStorage.setItem('theme', 'dark');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                }
+                
+                updateNavbarStyling();
+                
+                setTimeout(() => {
+                    darkModeToggle.style.animation = '';
+                }, 600);
+            });
+
+            // FAQ Functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const faqAnswer = faqItem.querySelector('.faq-answer');
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.parentElement.querySelector('.faq-answer').classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        question.classList.add('active');
+                        faqAnswer.classList.add('active');
+                    }
+                });
+            });
+
+            // Contact Form Handling
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simple form validation and submission simulation
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.style.background = 'var(--primary-color)';
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.background = '';
+                        contactForm.reset();
+                    }, 2000);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

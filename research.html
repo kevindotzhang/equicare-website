@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - EquiCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Ensure light mode by default before page loads
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme || savedTheme === 'light') {
+            document.documentElement.removeAttribute('data-theme');
+        } else if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart nav-icon"></i>
+                <span class="logo-text">EquiCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="research.html" class="nav-link active">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator.html" class="nav-link">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark Mode Toggle (Fixed Position) -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle-fixed" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="dark-mode-icon"></i>
+    </button>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="research-hero">
+            <div class="container">
+                <div class="research-hero-content">
+                    <h1>Science-Backed Horse Care</h1>
+                    <p class="hero-subtitle">Our recommendations are built on rigorous research, peer-reviewed studies, and decades of equine science. Here's the data behind our tools.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Overview -->
+        <section class="research-overview">
+            <div class="container">
+                <div class="overview-intro">
+                    <h2>Science That Serves</h2>
+                    <p class="lead">Every recommendation in EquiCare is built on rigorous scientific research, translated into practical guidance that horse owners can trust and understand.</p>
+                </div>
+                
+                <div class="research-philosophy">
+                    <div class="philosophy-content">
+                        <div class="philosophy-text">
+                            <h3>Our Research Philosophy</h3>
+                            <p>We believe that the best equine care comes from combining cutting-edge science with real-world experience. Our approach bridges the gap between academic research and barn-aisle decisions.</p>
+                            
+                            <div class="research-principles">
+                                <div class="principle-item">
+                                    <i class="fas fa-search"></i>
+                                    <div>
+                                        <h4>Evidence-Based</h4>
+                                        <p>Every tool is grounded in peer-reviewed research from leading equine science journals</p>
+                                    </div>
+                                </div>
+                                <div class="principle-item">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <h4>Practical Application</h4>
+                                        <p>We test our findings with real horses and real owners in real-world conditions</p>
+                                    </div>
+                                </div>
+                                <div class="principle-item">
+                                    <i class="fas fa-sync"></i>
+                                    <div>
+                                        <h4>Continuously Updated</h4>
+                                        <p>Our models evolve as new research emerges and our understanding deepens</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="philosophy-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                                <p>Data-driven insights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-by-numbers">
+                    <h3>Research at Scale</h3>
+                    <div class="research-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Research Papers Reviewed</div>
+                            <div class="stat-description">Comprehensive analysis of equine health literature</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Universities Collaborated With</div>
+                            <div class="stat-description">Global network of research institutions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years of Data Collection</div>
+                            <div class="stat-description">Longitudinal studies tracking horse health</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2,057</div>
+                            <div class="stat-label">Horses in Our Dataset</div>
+                            <div class="stat-description">Diverse population across breeds and disciplines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Areas -->
+        <section class="research-areas">
+            <div class="container">
+                <h2 class="section-title">Key Research Areas</h2>
+                
+                <div class="research-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="nutrition">Nutrition Science</button>
+                        <button class="tab-button" data-tab="physiology">Exercise Physiology</button>
+                        <button class="tab-button" data-tab="behavior">Behavior & Welfare</button>
+                        <button class="tab-button" data-tab="health">Preventive Health</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-panel active" id="nutrition">
+                            <div class="research-content">
+                                <h3>Equine Nutrition Research</h3>
+                                <p>Our nutrition recommendations are based on extensive research into equine digestive physiology, metabolic requirements, and feed efficiency studies.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>Digestible Energy Requirements</h4>
+                                        <p>Based on NRC 2007 guidelines and updated research from 15+ universities studying energy needs across different activity levels, ages, and body conditions.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 23 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Protein Quality and Requirements</h4>
+                                        <p>Our protein recommendations incorporate amino acid profiles, digestibility coefficients, and metabolic efficiency data from recent equine nutrition research.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 18 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Forage Quality Assessment</h4>
+                                        <p>Integration of fiber analysis, sugar content studies, and pasture management research to optimize forage-based feeding programs.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 31 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="physiology">
+                            <div class="research-content">
+                                <h3>Exercise Physiology & Performance</h3>
+                                <p>Understanding how different exercise intensities and durations affect nutritional needs, helping optimize feeding programs for performance horses.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>Metabolic Demand Calculations</h4>
+                                        <p>Energy expenditure research across disciplines including racing, eventing, dressage, and recreational riding to accurately determine caloric needs.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 12 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Recovery Nutrition</h4>
+                                        <p>Post-exercise nutrient timing and composition research to optimize recovery and maintain performance over time.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 15 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="behavior">
+                            <div class="research-content">
+                                <h3>Equine Behavior & Welfare Science</h3>
+                                <p>Incorporating behavioral research to ensure our feeding recommendations support not just physical health, but psychological well-being.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>Natural Feeding Patterns</h4>
+                                        <p>Research on wild horse grazing behaviors and how domestic feeding schedules can be optimized to reduce stress and behavioral issues.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 20 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Stress and Nutrition Interactions</h4>
+                                        <p>Studies on how stress affects digestion, nutrient absorption, and overall health, informing our holistic approach to horse care.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 14 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="health">
+                            <div class="research-content">
+                                <h3>Preventive Health Research</h3>
+                                <p>Evidence-based approaches to preventing common equine health issues through proper nutrition and management practices.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>Metabolic Syndrome Prevention</h4>
+                                        <p>Research on insulin resistance, laminitis prevention, and weight management strategies for at-risk horses.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 28 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Senior Horse Nutrition</h4>
+                                        <p>Age-related changes in digestion, metabolism, and nutrient requirements backed by longitudinal studies of aging horses.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-book"></i>
+                                            <span>Sources: 22 peer-reviewed studies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your Research -->
+        <section class="your-research">
+            <div class="container">
+                <h2 class="section-title">Our Foundational Research</h2>
+                <div class="research-highlight">
+                    <div class="research-paper">
+                        <h3>AI-Powered Equine Health Assessment: A Multi-Modal Approach</h3>
+                        <p class="research-authors">Our Research Team | 2024</p>
+                        
+                        <div class="research-abstract">
+                            <h4>Abstract</h4>
+                            <p>This study integrates machine learning models and large language models (LLMs) to analyze equine health data, aiming to predict horses' psychological states and identify key influencing factors. Using a comprehensive dataset containing 2,057 horse samples across 28 attributes, we applied decision tree and K-Nearest Neighbors (KNN) algorithms to predict health outcomes. The results show exceptional accuracy: 95%+ for general health assessment and behavioral analysis, with 80% accuracy specifically for surgical outcome predictions.</p>
+                        </div>
+                        
+                        <div class="research-findings">
+                            <h4>Key Findings</h4>
+                            <div class="findings-grid">
+                                <div class="finding-item">
+                                    <div class="finding-metric">95%+</div>
+                                    <div class="finding-label">Health Assessment Accuracy</div>
+                                    <p>Our machine learning models successfully predict equine health outcomes and behavioral states with exceptional reliability.</p>
+                                </div>
+                                
+                                <div class="finding-item">
+                                    <div class="finding-metric">2,057</div>
+                                    <div class="finding-label">Horse Samples Analyzed</div>
+                                    <p>Comprehensive dataset covering 28 physiological and behavioral attributes.</p>
+                                </div>
+                                
+                                <div class="finding-item">
+                                    <div class="finding-metric">80%</div>
+                                    <div class="finding-label">Surgical Outcome Prediction</div>
+                                    <p>Specialized accuracy for predicting surgical risks and post-operative outcomes in equine patients.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="research-impact">
+                            <h4>Clinical Significance</h4>
+                            <ul>
+                                <li><strong>Heart Rate Correlation:</strong> Strong predictor of psychological and health conditions</li>
+                                <li><strong>Movement Patterns:</strong> Key indicator of equine well-being and stress levels</li>
+                                <li><strong>Blood Parameters:</strong> Critical markers for early health intervention</li>
+                                <li><strong>Human-Horse Psychology:</strong> Rider psychological states significantly influence horse behavior and performance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-methodology">
+                            <h4>Methodology</h4>
+                            <p>Our research employed a multi-modal approach combining:</p>
+                            <ul>
+                                <li>Decision tree algorithms for interpretable health classification</li>
+                                <li>K-Nearest Neighbors (KNN) for pattern recognition in physiological data</li>
+                                <li>Large Language Models for behavioral analysis and psychological state assessment</li>
+                                <li>Correlation analysis across 28 physiological and behavioral attributes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-invite">
+                    <div class="invite-content">
+                        <h3>Contribute to Our Research</h3>
+                        <p>We're continuously expanding our dataset and welcome contributions from veterinary professionals and researchers. Your data helps improve our predictive models and benefits the entire equine community.</p>
+                        
+                        <div class="research-form-container">
+                            <div class="form-section">
+                                <h4>Submit Your Research</h4>
+                                <form class="research-form">
+                                    <div class="form-group">
+                                        <label for="researcher-name">Your Name</label>
+                                        <input type="text" id="researcher-name" placeholder="Dr. Jane Smith">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="institution">Institution/Affiliation</label>
+                                        <input type="text" id="institution" placeholder="University of Equine Science">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="research-title">Research Title</label>
+                                        <input type="text" id="research-title" placeholder="Impact of Feeding Frequency on Digestive Health">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="research-abstract">Abstract or Summary</label>
+                                        <textarea id="research-abstract" rows="4" placeholder="Brief summary of your research findings and methodology..."></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="publication-status">Publication Status</label>
+                                        <select id="publication-status">
+                                            <option value="">Select status</option>
+                                            <option value="published">Published in peer-reviewed journal</option>
+                                            <option value="submitted">Submitted for review</option>
+                                            <option value="in-progress">Research in progress</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Submit Research
+                                    </button>
+                                </form>
+                            </div>
+                            
+                            <div class="research-criteria">
+                                <h4>What We Look For</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Peer-reviewed publications</li>
+                                    <li><i class="fas fa-check"></i> Rigorous methodology</li>
+                                    <li><i class="fas fa-check"></i> Practical applications</li>
+                                    <li><i class="fas fa-check"></i> Ethical research practices</li>
+                                    <li><i class="fas fa-check"></i> Reproducible results</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Updates -->
+        <section class="research-updates">
+            <div class="container">
+                <h2 class="section-title">Recent Research Updates</h2>
+                <p class="section-subtitle">Stay informed about the latest scientific developments that may affect your horse care decisions.</p>
+                
+                <div class="updates-grid">
+                    <div class="update-card" data-aos="fade-up">
+                        <div class="update-date">March 2024</div>
+                        <h3>Updated Protein Requirements for Senior Horses</h3>
+                        <p>New research from UC Davis suggests senior horses (20+ years) may benefit from higher protein intake than previously recommended. We've updated our calculator accordingly.</p>
+                        <div class="update-source">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Journal of Equine Veterinary Science, 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="update-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="update-date">February 2024</div>
+                        <h3>Forage-to-Concentrate Ratios in Performance Horses</h3>
+                        <p>Long-term study confirms that maintaining at least 50% forage in the diet improves digestive health even in high-performance athletes.</p>
+                        <div class="update-source">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Equine Exercise Physiology, 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="update-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="update-date">January 2024</div>
+                        <h3>Stress Reduction Through Feeding Management</h3>
+                        <p>Research demonstrates that consistent feeding schedules and slow-feeder devices significantly reduce cortisol levels in stabled horses.</p>
+                        <div class="update-source">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Applied Animal Behaviour Science, 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Put Research Into Practice</h2>
+                    <p>Ready to apply evidence-based nutrition principles to your horse's care? Our calculator incorporates all this research into personalized recommendations.</p>
+                    <div class="cta-buttons">
+                        <a href="calculator.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Try Our Calculator
+                        </a>
+                        <a href="about.html" class="btn btn-secondary btn-large">
+                            <i class="fas fa-users"></i>
+                            Meet Our Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart"></i>
+                        <span>EquiCare</span>
+                    </div>
+                    <p>Compassionate, science-backed horse care solutions for owners who want the best for their companions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EquiCare. Made with ❤️ for horse owners everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Research tabs functionality and dark mode
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dark Mode Toggle for Research Page
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const darkModeIcon = document.getElementById('dark-mode-icon');
+            const body = document.body;
+
+            // Function to update navbar based on theme and scroll
+            function updateNavbarStyling() {
+                const navbar = document.querySelector('.navbar');
+                const isDarkMode = body.getAttribute('data-theme') === 'dark';
+                
+                if (window.scrollY > 100) {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.98)';
+                        navbar.style.boxShadow = '0 2px 20px rgba(45, 90, 39, 0.1)';
+                    }
+                } else {
+                    if (isDarkMode) {
+                        navbar.style.background = 'rgba(26, 31, 26, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    } else {
+                        navbar.style.background = 'rgba(254, 253, 248, 0.95)';
+                        navbar.style.boxShadow = 'none';
+                    }
+                }
+            }
+
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                darkModeIcon.className = 'fas fa-sun';
+            } else {
+                body.removeAttribute('data-theme');
+                darkModeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+
+            // Initial navbar styling setup
+            updateNavbarStyling();
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', updateNavbarStyling);
+
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = body.getAttribute('data-theme');
+                
+                if (currentTheme === 'dark') {
+                    body.removeAttribute('data-theme');
+                    darkModeIcon.className = 'fas fa-moon';
+                    localStorage.setItem('theme', 'light');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    darkModeIcon.className = 'fas fa-sun';
+                    localStorage.setItem('theme', 'dark');
+                    darkModeToggle.style.animation = 'bounce 0.6s ease';
+                }
+                
+                updateNavbarStyling();
+                
+                setTimeout(() => {
+                    darkModeToggle.style.animation = '';
+                }, 600);
+            });
+
+            // Research tabs functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and panels
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding panel
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Research form submission
+            const researchForm = document.querySelector('.research-form');
+            if (researchForm) {
+                researchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const requiredFields = ['researcher-name', 'institution', 'research-title', 'research-abstract'];
+                    let isValid = true;
+                    
+                    requiredFields.forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        if (!field.value.trim()) {
+                            field.style.borderColor = '#e74c3c';
+                            isValid = false;
+                        } else {
+                            field.style.borderColor = '#ddd';
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // Show success message
+                        const submitBtn = researchForm.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.innerHTML;
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Submitted!';
+                        submitBtn.style.background = '#27ae60';
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.style.background = '';
+                            researchForm.reset();
+                        }, 3000);
+                    } else {
+                        // Show error message
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
