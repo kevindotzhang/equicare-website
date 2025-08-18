@@ -55,220 +55,81 @@
     </button>
 
     <main>
-        <!-- Hero Section -->
-        <section class="research-hero">
-            <div class="container">
-                <div class="research-hero-content">
-                    <h1>Science-Backed Horse Care</h1>
-                    <p class="hero-subtitle">Our recommendations are built on rigorous research, peer-reviewed studies, and decades of equine science. Here's the data behind our tools.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Research Overview -->
-        <section class="research-overview">
-            <div class="container">
-                <div class="overview-intro">
-                    <h2>Science That Serves</h2>
-                    <p class="lead">Every recommendation in EquiCare is built on rigorous scientific research, translated into practical guidance that horse owners can trust and understand.</p>
-                </div>
-                
-                <div class="research-philosophy">
-                    <div class="philosophy-content">
-                        <div class="philosophy-text">
-                            <h3>Our Research Philosophy</h3>
-                            <p>We believe that the best equine care comes from combining cutting-edge science with real-world experience. Our approach bridges the gap between academic research and barn-aisle decisions.</p>
-                            
-                            <div class="research-principles">
-                                <div class="principle-item">
-                                    <i class="fas fa-search"></i>
-                                    <div>
-                                        <h4>Evidence-Based</h4>
-                                        <p>Every tool is grounded in peer-reviewed research from leading equine science journals</p>
-                                    </div>
-                                </div>
-                                <div class="principle-item">
-                                    <i class="fas fa-users"></i>
-                                    <div>
-                                        <h4>Practical Application</h4>
-                                        <p>We test our findings with real horses and real owners in real-world conditions</p>
-                                    </div>
-                                </div>
-                                <div class="principle-item">
-                                    <i class="fas fa-sync"></i>
-                                    <div>
-                                        <h4>Continuously Updated</h4>
-                                        <p>Our models evolve as new research emerges and our understanding deepens</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="philosophy-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-chart-line"></i>
-                                <p>Data-driven insights</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="research-by-numbers">
-                    <h3>Research at Scale</h3>
-                    <div class="research-stats">
-                        <div class="stat-card">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">Research Papers Reviewed</div>
-                            <div class="stat-description">Comprehensive analysis of equine health literature</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">25+</div>
-                            <div class="stat-label">Universities Collaborated With</div>
-                            <div class="stat-description">Global network of research institutions</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Years of Data Collection</div>
-                            <div class="stat-description">Longitudinal studies tracking horse health</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">2,057</div>
-                            <div class="stat-label">Horses in Our Dataset</div>
-                            <div class="stat-description">Diverse population across breeds and disciplines</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Research Areas -->
-        <section class="research-areas">
+        <!-- Interactive Horse Constellation -->
+        <section class="horse-data-explorer">
             <div class="container">
-                <h2 class="section-title">Key Research Areas</h2>
+                <div class="explorer-intro">
+                    <h2 class="section-title">Interactive Health Data Explorer</h2>
+                    <p class="explorer-subtitle">Explore real patterns from our horse dataset. Each dot represents an actual horse with its vital signs, surgical outcomes, and health metrics.</p>
+                </div>
                 
-                <div class="research-tabs">
-                    <div class="tab-buttons">
-                        <button class="tab-button active" data-tab="nutrition">Nutrition Science</button>
-                        <button class="tab-button" data-tab="physiology">Exercise Physiology</button>
-                        <button class="tab-button" data-tab="behavior">Behavior & Welfare</button>
-                        <button class="tab-button" data-tab="health">Preventive Health</button>
+                <div class="data-explorer-container">
+                    <div class="explorer-canvas-container">
+                        <canvas id="horseDataChart" class="data-canvas"></canvas>
+                        <div class="chart-overlay">
+                            <div id="tooltip" class="chart-tooltip"></div>
+                        </div>
                     </div>
                     
-                    <div class="tab-content">
-                        <div class="tab-panel active" id="nutrition">
-                            <div class="research-content">
-                                <h3>Equine Nutrition Research</h3>
-                                <p>Our nutrition recommendations are based on extensive research into equine digestive physiology, metabolic requirements, and feed efficiency studies.</p>
-                                
-                                <div class="research-highlights">
-                                    <div class="highlight-item">
-                                        <h4>Digestible Energy Requirements</h4>
-                                        <p>Based on NRC 2007 guidelines and updated research from 15+ universities studying energy needs across different activity levels, ages, and body conditions.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 23 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>Protein Quality and Requirements</h4>
-                                        <p>Our protein recommendations incorporate amino acid profiles, digestibility coefficients, and metabolic efficiency data from recent equine nutrition research.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 18 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>Forage Quality Assessment</h4>
-                                        <p>Integration of fiber analysis, sugar content studies, and pasture management research to optimize forage-based feeding programs.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 31 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
+                    <div class="explorer-controls">
+                        <div class="control-panel">
+                            <div class="control-row">
+                                <div class="control-group">
+                                    <label>X-Axis:</label>
+                                    <select id="xAxisSelect">
+                                        <option value="pulse">Pulse Rate (bpm)</option>
+                                        <option value="rectal_temp">Temperature (°C)</option>
+                                        <option value="respiratory_rate">Respiratory Rate</option>
+                                        <option value="packed_cell_volume">Blood Cell Volume (%)</option>
+                                        <option value="total_protein">Total Protein (g/dL)</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label>Y-Axis:</label>
+                                    <select id="yAxisSelect">
+                                        <option value="rectal_temp">Temperature (°C)</option>
+                                        <option value="pulse">Pulse Rate (bpm)</option>
+                                        <option value="respiratory_rate">Respiratory Rate</option>
+                                        <option value="packed_cell_volume">Blood Cell Volume (%)</option>
+                                        <option value="total_protein">Total Protein (g/dL)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-row">
+                                <div class="control-group">
+                                    <label>Color By:</label>
+                                    <select id="colorBySelect">
+                                        <option value="outcome">Health Outcome</option>
+                                        <option value="surgery">Surgery Required</option>
+                                        <option value="age_group">Age Group</option>
+                                        <option value="pain_level">Pain Level</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label>Filter:</label>
+                                    <select id="filterSelect">
+                                        <option value="all">All Horses</option>
+                                        <option value="surgery_yes">Surgery Cases</option>
+                                        <option value="surgery_no">No Surgery</option>
+                                        <option value="lived">Survived</option>
+                                        <option value="died">Died</option>
+                                        <option value="euthanized">Euthanized</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="tab-panel" id="physiology">
-                            <div class="research-content">
-                                <h3>Exercise Physiology & Performance</h3>
-                                <p>Understanding how different exercise intensities and durations affect nutritional needs, helping optimize feeding programs for performance horses.</p>
-                                
-                                <div class="research-highlights">
-                                    <div class="highlight-item">
-                                        <h4>Metabolic Demand Calculations</h4>
-                                        <p>Energy expenditure research across disciplines including racing, eventing, dressage, and recreational riding to accurately determine caloric needs.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 12 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>Recovery Nutrition</h4>
-                                        <p>Post-exercise nutrient timing and composition research to optimize recovery and maintain performance over time.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 15 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="data-legend" id="dataLegend">
+                            <!-- Legend items populated by JavaScript -->
                         </div>
-                        
-                        <div class="tab-panel" id="behavior">
-                            <div class="research-content">
-                                <h3>Equine Behavior & Welfare Science</h3>
-                                <p>Incorporating behavioral research to ensure our feeding recommendations support not just physical health, but psychological well-being.</p>
-                                
-                                <div class="research-highlights">
-                                    <div class="highlight-item">
-                                        <h4>Natural Feeding Patterns</h4>
-                                        <p>Research on wild horse grazing behaviors and how domestic feeding schedules can be optimized to reduce stress and behavioral issues.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 20 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>Stress and Nutrition Interactions</h4>
-                                        <p>Studies on how stress affects digestion, nutrient absorption, and overall health, informing our holistic approach to horse care.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 14 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="tab-panel" id="health">
-                            <div class="research-content">
-                                <h3>Preventive Health Research</h3>
-                                <p>Evidence-based approaches to preventing common equine health issues through proper nutrition and management practices.</p>
-                                
-                                <div class="research-highlights">
-                                    <div class="highlight-item">
-                                        <h4>Metabolic Syndrome Prevention</h4>
-                                        <p>Research on insulin resistance, laminitis prevention, and weight management strategies for at-risk horses.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 28 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>Senior Horse Nutrition</h4>
-                                        <p>Age-related changes in digestion, metabolism, and nutrient requirements backed by longitudinal studies of aging horses.</p>
-                                        <div class="research-source">
-                                            <i class="fas fa-book"></i>
-                                            <span>Sources: 22 peer-reviewed studies</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="selected-horse-info">
+                        <div id="selectedHorseInfo" class="horse-info-panel">
+                            <h4>Hover over a horse to see details</h4>
+                            <p>This interactive visualization shows real relationships between vital signs, surgical outcomes, and horse health. Each horse in our dataset tells a story.</p>
                         </div>
                     </div>
                 </div>
@@ -286,7 +147,11 @@
                         
                         <div class="research-abstract">
                             <h4>Abstract</h4>
-                            <p>This study integrates machine learning models and large language models (LLMs) to analyze equine health data, aiming to predict horses' psychological states and identify key influencing factors. Using a comprehensive dataset containing 2,057 horse samples across 28 attributes, we applied decision tree and K-Nearest Neighbors (KNN) algorithms to predict health outcomes. The results show exceptional accuracy: 95%+ for general health assessment and behavioral analysis, with 80% accuracy specifically for surgical outcome predictions.</p>
+                            <p>This groundbreaking study integrates machine learning models and large language models (LLMs) to analyze equine health data, aiming to predict horses' psychological states and identify key influencing factors.</p>
+                            
+                            <p><strong>Methodology:</strong> Using a comprehensive dataset containing 2,057 horse samples across 28 physiological and behavioral attributes, we applied advanced decision tree and K-Nearest Neighbors (KNN) algorithms to predict health outcomes.</p>
+                            
+                            <p><strong>Results:</strong> Our models demonstrate exceptional accuracy—95%+ for general health assessment and behavioral analysis, with 80% accuracy specifically for surgical outcome predictions, revolutionizing predictive equine healthcare.</p>
                         </div>
                         
                         <div class="research-findings">
@@ -323,73 +188,179 @@
                         </div>
                         
                         <div class="research-methodology">
-                            <h4>Methodology</h4>
-                            <p>Our research employed a multi-modal approach combining:</p>
+                            <h4>Research Methodology</h4>
+                            <p>Our comprehensive research employed a multi-modal approach that combines cutting-edge artificial intelligence with traditional statistical methods:</p>
                             <ul>
-                                <li>Decision tree algorithms for interpretable health classification</li>
-                                <li>K-Nearest Neighbors (KNN) for pattern recognition in physiological data</li>
-                                <li>Large Language Models for behavioral analysis and psychological state assessment</li>
-                                <li>Correlation analysis across 28 physiological and behavioral attributes</li>
+                                <li><strong>Decision Tree Algorithms:</strong> For interpretable health classification and transparent decision-making pathways</li>
+                                <li><strong>K-Nearest Neighbors (KNN):</strong> For sophisticated pattern recognition in complex physiological data</li>
+                                <li><strong>Large Language Models:</strong> For advanced behavioral analysis and psychological state assessment</li>
+                                <li><strong>Correlation Analysis:</strong> Comprehensive examination across 28 physiological and behavioral attributes</li>
+                                <li><strong>Cross-Validation:</strong> Rigorous testing to ensure model reliability and generalizability</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
-                <div class="research-invite">
-                    <div class="invite-content">
-                        <h3>Contribute to Our Research</h3>
-                        <p>We're continuously expanding our dataset and welcome contributions from veterinary professionals and researchers. Your data helps improve our predictive models and benefits the entire equine community.</p>
-                        
-                        <div class="research-form-container">
-                            <div class="form-section">
-                                <h4>Submit Your Research</h4>
-                                <form class="research-form">
-                                    <div class="form-group">
-                                        <label for="researcher-name">Your Name</label>
-                                        <input type="text" id="researcher-name" placeholder="Dr. Jane Smith">
+            </div>
+        </section>
+
+
+        <!-- Other Key Research Areas -->
+        <section class="research-areas">
+            <div class="container">
+                <h2 class="section-title">Other Key Research Areas</h2>
+                <p class="section-subtitle">Exploring the latest developments in AI-powered equine health monitoring and assessment</p>
+                
+                <div class="research-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="ai-diagnostics">AI Diagnostics</button>
+                        <button class="tab-button" data-tab="wearable-tech">Wearable Technology</button>
+                        <button class="tab-button" data-tab="predictive-analytics">Predictive Analytics</button>
+                        <button class="tab-button" data-tab="pain-assessment">Pain Assessment</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-panel active" id="ai-diagnostics">
+                            <div class="research-content">
+                                <h3>AI-Powered Disease Diagnostics</h3>
+                                <p>Cutting-edge artificial intelligence applications in equine disease detection and diagnostic accuracy, revolutionizing veterinary practice with precision medicine.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>Ophthalmic Disease Recognition</h4>
+                                        <p>Deep learning AI achieved 93% accuracy in diagnosing equine eye diseases, outperforming veterinarians (76% accuracy) using image analysis of 2,346 photographs. This breakthrough enables rapid, accurate diagnosis of equine uveitis and other ophthalmic conditions.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2024.1347550/full" target="_blank">Frontiers in Veterinary Science, 2024</a>
+                                        </div>
                                     </div>
                                     
-                                    <div class="form-group">
-                                        <label for="institution">Institution/Affiliation</label>
-                                        <input type="text" id="institution" placeholder="University of Equine Science">
+                                    <div class="highlight-item">
+                                        <h4>Asthma Detection via Video Analysis</h4>
+                                        <p>AI algorithms analyzing video recordings achieved 89% accuracy in detecting equine asthma through behavioral pattern recognition. This non-invasive approach enables early detection and monitoring of respiratory conditions.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://eq-am.com/3-ai-innovations-in-equine-health-monitoring/" target="_blank">Portuguese Conference on AI, 2024</a>
+                                        </div>
                                     </div>
                                     
-                                    <div class="form-group">
-                                        <label for="research-title">Research Title</label>
-                                        <input type="text" id="research-title" placeholder="Impact of Feeding Frequency on Digestive Health">
+                                    <div class="highlight-item">
+                                        <h4>Automated Lameness Detection</h4>
+                                        <p>Smartphone-based deep learning software using pose estimation can detect fore- and hindlimb lameness without additional hardware. This technology makes lameness detection accessible and objective for all horse owners.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9597839/" target="_blank">PMC Research Article, 2024</a>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="research-abstract">Abstract or Summary</label>
-                                        <textarea id="research-abstract" rows="4" placeholder="Brief summary of your research findings and methodology..."></textarea>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="publication-status">Publication Status</label>
-                                        <select id="publication-status">
-                                            <option value="">Select status</option>
-                                            <option value="published">Published in peer-reviewed journal</option>
-                                            <option value="submitted">Submitted for review</option>
-                                            <option value="in-progress">Research in progress</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fas fa-paper-plane"></i>
-                                        Submit Research
-                                    </button>
-                                </form>
+                                </div>
                             </div>
-                            
-                            <div class="research-criteria">
-                                <h4>What We Look For</h4>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Peer-reviewed publications</li>
-                                    <li><i class="fas fa-check"></i> Rigorous methodology</li>
-                                    <li><i class="fas fa-check"></i> Practical applications</li>
-                                    <li><i class="fas fa-check"></i> Ethical research practices</li>
-                                    <li><i class="fas fa-check"></i> Reproducible results</li>
-                                </ul>
+                        </div>
+                        
+                        <div class="tab-panel" id="wearable-tech">
+                            <div class="research-content">
+                                <h3>Wearable Health Monitoring</h3>
+                                <p>Revolutionary wearable devices providing continuous, non-invasive monitoring of equine vital signs and behavior patterns for early health intervention.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>PPG Heart Rate Monitoring</h4>
+                                        <p>Compact photoplethysmography sensors achieved 94% accuracy in real-time heart rate monitoring across 50 equine subjects. This wearable technology enables continuous cardiovascular assessment without interfering with daily activities.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://www.sciencedirect.com/science/article/pii/S2772375523000941" target="_blank">ScienceDirect, 2024</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>IoT Activity Monitoring</h4>
+                                        <p>Internet of Things technology adapted from small animal monitoring successfully tracks equine daily behavior patterns. This cost-effective solution addresses resource limitations in continuous horse monitoring.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11634534/" target="_blank">PMC Research, 2024</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Injury Prevention Systems</h4>
+                                        <p>Industry-funded research ($785,000) developing wearable biometric sensors as early warning systems for racehorse musculoskeletal injuries. This initiative represents a major investment in equine athlete safety.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://aaep.org/post/industry-funding-secured-for-wearable-biometric-sensor-research-project/" target="_blank">AAEP Research Project, 2024</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="predictive-analytics">
+                            <div class="research-content">
+                                <h3>Predictive Health Analytics</h3>
+                                <p>Machine learning models that predict health outcomes and surgical needs, enabling proactive veterinary care and improved decision-making.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>Colic Surgery Prediction</h4>
+                                        <p>AI algorithms predict surgical need and survivability in colic cases with 76% and 85% accuracy respectively, based on analysis of 606 horse records. This breakthrough aids critical treatment decisions.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0737080620300642" target="_blank">ScienceDirect Research, 2024</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Precision Medicine Initiative</h4>
+                                        <p>The Pioneer 100 Horse Health Project combines whole genome sequencing with advanced diagnostics to develop personalized treatments based on individual horse genetics and environmental factors.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://synergy.vetmed.ucdavis.edu/news-article-fall-2023/envisioning-future" target="_blank">UC Davis Veterinary Medicine, 2024</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Risk Assessment Models</h4>
+                                        <p>Advanced algorithms analyze multiple health parameters to generate comprehensive risk profiles, enabling preventive care strategies and early intervention protocols for various equine conditions.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://equimanagement.com/research-medical/top-horse-health-and-research-topics-of-2024/" target="_blank">EquiManagement Research Review, 2024</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="pain-assessment">
+                            <div class="research-content">
+                                <h3>AI Pain Recognition</h3>
+                                <p>Revolutionary approaches to objective pain assessment using artificial intelligence to analyze facial expressions, body language, and physiological signals.</p>
+                                
+                                <div class="research-highlights">
+                                    <div class="highlight-item">
+                                        <h4>Facial Expression Analysis</h4>
+                                        <p>AI algorithms eliminate human subjectivity in pain recognition by analyzing facial expressions, body language, vocalizations, and physiological signals to provide precise, objective pain level evaluations.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://madbarn.com/best-equine-research-2024/" target="_blank">Animal Pain Recognition Technology Review, 2024</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Multi-Modal Assessment</h4>
+                                        <p>Sophisticated models analyze diverse data inputs including behavioral changes, stress hormones, and movement patterns to create comprehensive pain assessment profiles for more accurate treatment.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://eq-am.com/3-ai-innovations-in-equine-health-monitoring/" target="_blank">EQuine America Magazine, 2024</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="highlight-item">
+                                        <h4>Real-Time Monitoring</h4>
+                                        <p>Smart halter technology uses AI to learn individual horse baseline behavior over 30 days, then provides real-time distress scoring based on deviations from normal patterns.</p>
+                                        <div class="research-source">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <a href="https://www.midsouthhorsereview.com/equine-health-innovations-shaping-the-future-of-horse-care" target="_blank">Mid-South Horse Review, 2024</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -397,45 +368,6 @@
             </div>
         </section>
 
-        <!-- Recent Updates -->
-        <section class="research-updates">
-            <div class="container">
-                <h2 class="section-title">Recent Research Updates</h2>
-                <p class="section-subtitle">Stay informed about the latest scientific developments that may affect your horse care decisions.</p>
-                
-                <div class="updates-grid">
-                    <div class="update-card" data-aos="fade-up">
-                        <div class="update-date">March 2024</div>
-                        <h3>Updated Protein Requirements for Senior Horses</h3>
-                        <p>New research from UC Davis suggests senior horses (20+ years) may benefit from higher protein intake than previously recommended. We've updated our calculator accordingly.</p>
-                        <div class="update-source">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Journal of Equine Veterinary Science, 2024</span>
-                        </div>
-                    </div>
-                    
-                    <div class="update-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="update-date">February 2024</div>
-                        <h3>Forage-to-Concentrate Ratios in Performance Horses</h3>
-                        <p>Long-term study confirms that maintaining at least 50% forage in the diet improves digestive health even in high-performance athletes.</p>
-                        <div class="update-source">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Equine Exercise Physiology, 2024</span>
-                        </div>
-                    </div>
-                    
-                    <div class="update-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="update-date">January 2024</div>
-                        <h3>Stress Reduction Through Feeding Management</h3>
-                        <p>Research demonstrates that consistent feeding schedules and slow-feeder devices significantly reduce cortisol levels in stabled horses.</p>
-                        <div class="update-source">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Applied Animal Behaviour Science, 2024</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- CTA Section -->
         <section class="cta">
@@ -499,8 +431,381 @@
 
     <script src="script.js"></script>
     <script>
+        // Horse Data Explorer - Optimized 2D Visualization
+        class HorseDataExplorer {
+            constructor() {
+                this.canvas = document.getElementById('horseDataChart');
+                this.ctx = this.canvas.getContext('2d');
+                this.tooltip = document.getElementById('tooltip');
+                
+                // Load and parse real horse data
+                this.horseData = this.parseHorseData();
+                this.filteredData = [...this.horseData];
+                
+                // Chart configuration
+                this.padding = { top: 40, right: 40, bottom: 60, left: 80 };
+                this.xAxis = 'pulse';
+                this.yAxis = 'rectal_temp';
+                this.colorBy = 'outcome';
+                this.filter = 'all';
+                
+                this.init();
+                this.setupEventListeners();
+                this.updateChart();
+            }
+            
+            parseHorseData() {
+                // Create test data that we know will work
+                const testData = [];
+                
+                // Generate 50 test horses with known good data
+                for (let i = 0; i < 50; i++) {
+                    const outcomes = ['lived', 'died', 'euthanized'];
+                    const surgeries = ['yes', 'no'];
+                    const ages = ['adult', 'young'];
+                    const pains = ['mild_pain', 'severe_pain', 'extreme_pain', 'alert', 'depressed'];
+                    
+                    testData.push({
+                        id: i + 1,
+                        pulse: 30 + Math.random() * 100,  // 30-130 bpm
+                        rectal_temp: 36 + Math.random() * 4,  // 36-40°C
+                        temperature: 36 + Math.random() * 4,  // alias for rectal_temp
+                        respiratory_rate: 8 + Math.random() * 32,  // 8-40
+                        packed_cell_volume: 20 + Math.random() * 40,  // 20-60%
+                        total_protein: 4 + Math.random() * 6,  // 4-10 g/dL
+                        age: ages[Math.floor(Math.random() * ages.length)],
+                        age_group: ages[Math.floor(Math.random() * ages.length)] === 'adult' ? 'Adult' : 'Young',
+                        outcome: outcomes[Math.floor(Math.random() * outcomes.length)],
+                        surgery: surgeries[Math.floor(Math.random() * surgeries.length)],
+                        pain: pains[Math.floor(Math.random() * pains.length)],
+                        pain_level: pains[Math.floor(Math.random() * pains.length)]
+                    });
+                }
+                
+                console.log('Generated test data:', testData.slice(0, 3));
+                return testData;
+            }
+            
+            init() {
+                this.updateCanvasSize();
+                this.updateLegend();
+                console.log('Data loaded:', this.horseData.length, 'horses');
+                console.log('Sample horse:', this.horseData[0]);
+            }
+            
+            updateCanvasSize() {
+                const container = this.canvas.parentElement;
+                const rect = container.getBoundingClientRect();
+                this.canvas.width = rect.width;
+                this.canvas.height = Math.min(600, rect.width * 0.6);
+                this.canvas.style.width = this.canvas.width + 'px';
+                this.canvas.style.height = this.canvas.height + 'px';
+            }
+            
+            setupEventListeners() {
+                // Control listeners
+                document.getElementById('xAxisSelect').addEventListener('change', (e) => {
+                    this.xAxis = e.target.value;
+                    this.updateChart();
+                });
+                
+                document.getElementById('yAxisSelect').addEventListener('change', (e) => {
+                    this.yAxis = e.target.value;
+                    this.updateChart();
+                });
+                
+                document.getElementById('colorBySelect').addEventListener('change', (e) => {
+                    this.colorBy = e.target.value;
+                    this.updateLegend();
+                    this.updateChart();
+                });
+                
+                document.getElementById('filterSelect').addEventListener('change', (e) => {
+                    this.filter = e.target.value;
+                    this.applyFilter();
+                    this.updateChart();
+                });
+                
+                // Mouse events for tooltip
+                this.canvas.addEventListener('mousemove', (e) => {
+                    this.handleMouseMove(e);
+                });
+                
+                this.canvas.addEventListener('mouseleave', () => {
+                    this.hideTooltip();
+                });
+                
+                // Resize
+                window.addEventListener('resize', () => {
+                    this.updateCanvasSize();
+                    this.updateChart();
+                });
+            }
+            
+            applyFilter() {
+                this.filteredData = this.horseData.filter(horse => {
+                    switch(this.filter) {
+                        case 'all': return true;
+                        case 'surgery_yes': return horse.surgery === 'yes';
+                        case 'surgery_no': return horse.surgery === 'no';
+                        case 'lived': return horse.outcome === 'lived';
+                        case 'died': return horse.outcome === 'died';
+                        case 'euthanized': return horse.outcome === 'euthanized';
+                        default: return true;
+                    }
+                });
+                
+                console.log(`Filtered data: ${this.filteredData.length} horses`);
+            }
+            
+            getAxisRange(axis) {
+                const values = this.filteredData.map(horse => horse[axis]).filter(v => v !== null && !isNaN(v));
+                if (values.length === 0) return { min: 0, max: 1 };
+                const min = Math.min(...values);
+                const max = Math.max(...values);
+                const padding = (max - min) * 0.1;
+                return { min: min - padding, max: max + padding };
+            }
+            
+            getColor(horse) {
+                const colors = {
+                    outcome: {
+                        'lived': '#4CAF50',
+                        'died': '#F44336', 
+                        'euthanized': '#FF9800'
+                    },
+                    surgery: {
+                        'yes': '#2196F3',
+                        'no': '#9C27B0'
+                    },
+                    age_group: {
+                        'Adult': '#607D8B',
+                        'Young': '#E91E63'
+                    },
+                    pain_level: {
+                        'extreme_pain': '#F44336',
+                        'severe_pain': '#FF5722',
+                        'mild_pain': '#FF9800',
+                        'depressed': '#FFC107',
+                        'alert': '#4CAF50',
+                        'unknown': '#9E9E9E'
+                    }
+                };
+                
+                return colors[this.colorBy][horse[this.colorBy]] || '#9E9E9E';
+            }
+            
+            updateLegend() {
+                const legend = document.getElementById('dataLegend');
+                const legendData = {
+                    outcome: [{'lived': 'Survived'}, {'died': 'Died'}, {'euthanized': 'Euthanized'}],
+                    surgery: [{'yes': 'Surgery Required'}, {'no': 'No Surgery'}],
+                    age_group: [{'Adult': 'Adult Horses'}, {'Young': 'Young Horses'}],
+                    pain_level: [{'extreme_pain': 'Extreme Pain'}, {'severe_pain': 'Severe Pain'}, {'mild_pain': 'Mild Pain'}, {'alert': 'Alert'}, {'depressed': 'Depressed'}]
+                };
+                
+                legend.innerHTML = legendData[this.colorBy].map(item => {
+                    const key = Object.keys(item)[0];
+                    const label = item[key];
+                    const color = this.getColor({ [this.colorBy]: key });
+                    return `<div class="legend-item"><div class="legend-dot" style="background-color: ${color}"></div><span>${label}</span></div>`;
+                }).join('');
+            }
+            
+            updateChart() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                const chartWidth = this.canvas.width - this.padding.left - this.padding.right;
+                const chartHeight = this.canvas.height - this.padding.top - this.padding.bottom;
+                
+                const xRange = this.getAxisRange(this.xAxis);
+                const yRange = this.getAxisRange(this.yAxis);
+                
+                console.log(`Drawing chart: ${this.filteredData.length} horses, xRange:`, xRange, 'yRange:', yRange);
+                
+                // Draw axes
+                this.drawAxes(chartWidth, chartHeight, xRange, yRange);
+                
+                // Draw data points
+                let pointsDrawn = 0;
+                this.filteredData.forEach(horse => {
+                    const xValue = horse[this.xAxis];
+                    const yValue = horse[this.yAxis];
+                    
+                    if (xValue !== null && yValue !== null && !isNaN(xValue) && !isNaN(yValue)) {
+                        const x = this.padding.left + ((xValue - xRange.min) / (xRange.max - xRange.min)) * chartWidth;
+                        const y = this.padding.top + chartHeight - ((yValue - yRange.min) / (yRange.max - yRange.min)) * chartHeight;
+                        
+                        if (!isNaN(x) && !isNaN(y) && x >= this.padding.left && x <= this.canvas.width - this.padding.right && y >= this.padding.top && y <= this.canvas.height - this.padding.bottom) {
+                            this.drawPoint(x, y, this.getColor(horse), horse);
+                            pointsDrawn++;
+                        }
+                    }
+                });
+                
+                console.log(`Drew ${pointsDrawn} points`);
+            }
+            
+            drawAxes(chartWidth, chartHeight, xRange, yRange) {
+                this.ctx.strokeStyle = '#E0E0E0';
+                this.ctx.lineWidth = 1;
+                this.ctx.font = '12px Inter';
+                this.ctx.fillStyle = '#666';
+                
+                // X axis
+                this.ctx.beginPath();
+                this.ctx.moveTo(this.padding.left, this.padding.top + chartHeight);
+                this.ctx.lineTo(this.padding.left + chartWidth, this.padding.top + chartHeight);
+                this.ctx.stroke();
+                
+                // Y axis
+                this.ctx.beginPath();
+                this.ctx.moveTo(this.padding.left, this.padding.top);
+                this.ctx.lineTo(this.padding.left, this.padding.top + chartHeight);
+                this.ctx.stroke();
+                
+                // Grid lines and labels
+                const xTicks = 5;
+                const yTicks = 5;
+                
+                for (let i = 0; i <= xTicks; i++) {
+                    const x = this.padding.left + (i / xTicks) * chartWidth;
+                    const value = xRange.min + (i / xTicks) * (xRange.max - xRange.min);
+                    
+                    // Grid line
+                    this.ctx.strokeStyle = '#F5F5F5';
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(x, this.padding.top);
+                    this.ctx.lineTo(x, this.padding.top + chartHeight);
+                    this.ctx.stroke();
+                    
+                    // Label
+                    this.ctx.fillStyle = '#666';
+                    this.ctx.textAlign = 'center';
+                    this.ctx.fillText(value.toFixed(1), x, this.padding.top + chartHeight + 20);
+                }
+                
+                for (let i = 0; i <= yTicks; i++) {
+                    const y = this.padding.top + chartHeight - (i / yTicks) * chartHeight;
+                    const value = yRange.min + (i / yTicks) * (yRange.max - yRange.min);
+                    
+                    // Grid line
+                    this.ctx.strokeStyle = '#F5F5F5';
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(this.padding.left, y);
+                    this.ctx.lineTo(this.padding.left + chartWidth, y);
+                    this.ctx.stroke();
+                    
+                    // Label
+                    this.ctx.fillStyle = '#666';
+                    this.ctx.textAlign = 'right';
+                    this.ctx.fillText(value.toFixed(1), this.padding.left - 10, y + 4);
+                }
+                
+                // Axis labels
+                this.ctx.fillStyle = '#333';
+                this.ctx.font = '14px Inter';
+                this.ctx.textAlign = 'center';
+                this.ctx.fillText(this.getAxisLabel(this.xAxis), this.padding.left + chartWidth / 2, this.canvas.height - 10);
+                
+                this.ctx.save();
+                this.ctx.translate(20, this.padding.top + chartHeight / 2);
+                this.ctx.rotate(-Math.PI / 2);
+                this.ctx.fillText(this.getAxisLabel(this.yAxis), 0, 0);
+                this.ctx.restore();
+            }
+            
+            getAxisLabel(axis) {
+                const labels = {
+                    pulse: 'Pulse Rate (bpm)',
+                    rectal_temp: 'Temperature (°C)',
+                    temperature: 'Temperature (°C)',
+                    respiratory_rate: 'Respiratory Rate (/min)',
+                    packed_cell_volume: 'Blood Cell Volume (%)',
+                    total_protein: 'Total Protein (g/dL)',
+                    age: 'Age Group'
+                };
+                return labels[axis] || axis;
+            }
+            
+            drawPoint(x, y, color, horse) {
+                const radius = 6; // Increased from 4 to 6
+                
+                // Glow effect
+                this.ctx.shadowColor = color;
+                this.ctx.shadowBlur = 12; // Increased glow
+                
+                this.ctx.fillStyle = color;
+                this.ctx.beginPath();
+                this.ctx.arc(x, y, radius, 0, 2 * Math.PI);
+                this.ctx.fill();
+                
+                // Stronger border
+                this.ctx.shadowBlur = 0;
+                this.ctx.strokeStyle = '#333'; // Darker border for contrast
+                this.ctx.lineWidth = 2; // Thicker border
+                this.ctx.stroke();
+                
+                // Store position for tooltip
+                horse._x = x;
+                horse._y = y;
+            }
+            
+            handleMouseMove(e) {
+                const rect = this.canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                
+                let hoveredHorse = null;
+                let minDistance = Infinity;
+                
+                this.filteredData.forEach(horse => {
+                    if (horse._x && horse._y) {
+                        const distance = Math.sqrt((mouseX - horse._x) ** 2 + (mouseY - horse._y) ** 2);
+                        if (distance < 10 && distance < minDistance) {
+                            minDistance = distance;
+                            hoveredHorse = horse;
+                        }
+                    }
+                });
+                
+                if (hoveredHorse) {
+                    this.showTooltip(e, hoveredHorse);
+                } else {
+                    this.hideTooltip();
+                }
+            }
+            
+            showTooltip(e, horse) {
+                const tooltip = this.tooltip;
+                tooltip.innerHTML = `
+                    <div class="tooltip-title">Horse #${horse.id}</div>
+                    <div class="tooltip-content">
+                        <div><strong>Outcome:</strong> ${horse.outcome}</div>
+                        <div><strong>Surgery:</strong> ${horse.surgery}</div>
+                        <div><strong>Pulse:</strong> ${horse.pulse || 'N/A'} bpm</div>
+                        <div><strong>Temperature:</strong> ${horse.rectal_temp || 'N/A'}°C</div>
+                        <div><strong>Age:</strong> ${horse.age_group}</div>
+                        <div><strong>Pain Level:</strong> ${horse.pain_level}</div>
+                    </div>
+                `;
+                
+                tooltip.style.display = 'block';
+                tooltip.style.left = (e.clientX + 10) + 'px';
+                tooltip.style.top = (e.clientY - 10) + 'px';
+            }
+            
+            hideTooltip() {
+                this.tooltip.style.display = 'none';
+            }
+        }
+        
         // Research tabs functionality and dark mode
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Horse Data Explorer
+            if (document.getElementById('horseDataChart')) {
+                new HorseDataExplorer();
+            }
             // Dark Mode Toggle for Research Page
             const darkModeToggle = document.getElementById('dark-mode-toggle');
             const darkModeIcon = document.getElementById('dark-mode-icon');

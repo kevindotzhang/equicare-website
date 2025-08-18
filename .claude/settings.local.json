@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.equicare.life)"
+      "WebFetch(domain:www.equicare.life)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
