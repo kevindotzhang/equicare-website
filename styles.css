@@ -303,7 +303,7 @@ body {
     padding: 160px 0 80px;
     background: var(--gradient-warm);
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .hero-content {
@@ -383,6 +383,141 @@ body {
 
 .hero-horse-image:hover {
     transform: scale(1.05);
+}
+
+/* Floating Geometric Shapes */
+.floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-shapes .shape {
+    position: absolute;
+    opacity: 0.6;
+    animation: float 20s infinite linear;
+}
+
+.floating-shapes .triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid var(--primary-color);
+    opacity: 0.4;
+}
+
+.floating-shapes .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0.5;
+}
+
+.floating-shapes .hexagon {
+    width: 14px;
+    height: 8px;
+    background: var(--primary-color);
+    position: relative;
+    opacity: 0.3;
+}
+
+.floating-shapes .hexagon:before,
+.floating-shapes .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.floating-shapes .hexagon:before {
+    bottom: 100%;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.floating-shapes .hexagon:after {
+    top: 100%;
+    border-top: 4px solid var(--primary-color);
+}
+
+.floating-shapes .square {
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    transform: rotate(45deg);
+    opacity: 0.4;
+}
+
+/* Individual shape positions and animations */
+.floating-shapes .shape:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+.floating-shapes .shape:nth-child(2) {
+    left: 20%;
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+.floating-shapes .shape:nth-child(3) {
+    left: 35%;
+    animation-delay: -10s;
+    animation-duration: 30s;
+}
+
+.floating-shapes .shape:nth-child(4) {
+    left: 50%;
+    animation-delay: -15s;
+    animation-duration: 18s;
+}
+
+.floating-shapes .shape:nth-child(5) {
+    left: 65%;
+    animation-delay: -8s;
+    animation-duration: 22s;
+}
+
+.floating-shapes .shape:nth-child(6) {
+    left: 80%;
+    animation-delay: -12s;
+    animation-duration: 28s;
+}
+
+.floating-shapes .shape:nth-child(7) {
+    left: 90%;
+    animation-delay: -18s;
+    animation-duration: 24s;
+}
+
+.floating-shapes .shape:nth-child(8) {
+    left: 75%;
+    animation-delay: -3s;
+    animation-duration: 26s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 /* Create frame-breaking effect with pseudo-element */
@@ -471,6 +606,39 @@ body {
     color: var(--text-medium);
     font-size: 1.1rem;
     font-weight: 500;
+}
+
+.founders-grid .member-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: var(--shadow-medium);
+}
+
+.founders-grid .member-info {
+    max-width: 600px;
+}
+
+.founders-grid .member-info h4 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.founders-grid .member-role {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.founders-grid .member-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+    text-align: center;
 }
 
 /* Mission, Vision & Values Section */
@@ -938,6 +1106,86 @@ body {
 .author-info span {
     color: var(--text-light);
     font-size: 0.9rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    background: var(--soft-gray);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.step-icon {
+    margin: 1rem 0 1.5rem 0;
+}
+
+.step-icon i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.step-card h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.step-card p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.how-it-works .cta-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Dark mode how it works */
+[data-theme="dark"] .how-it-works {
+    background: var(--warm-white);
+}
+
+[data-theme="dark"] .step-card {
+    background: var(--soft-gray);
+    border: 1px solid var(--border-color);
 }
 
 /* CTA Section */
@@ -1994,7 +2242,7 @@ body {
 
 /* Team Section Spacing */
 .team {
-    padding-top: 60px;
+    padding: 60px 0 120px 0;
 }
 
 /* About Page Dark Mode */

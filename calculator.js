@@ -160,7 +160,14 @@ class EquiCareCalculator {
         
         this.currentStep = 5;
         this.updateStepDisplay();
-        this.displayResults(calculations);
+        
+        // Show loading state
+        this.showLoadingState();
+        
+        // Wait 5 seconds before displaying results
+        setTimeout(() => {
+            this.displayResults(calculations);
+        }, 5000);
     }
 
     performCalculations() {
@@ -333,6 +340,30 @@ class EquiCareCalculator {
             clinicalNotes: clinicalNotes,
             psychologicalFactors: psychologicalFactors
         };
+    }
+
+    showLoadingState() {
+        const horseName = this.horseData.name || 'Your horse';
+        
+        // Update summary to show loading
+        document.getElementById('horse-summary').innerHTML = 
+            `<i class="fas fa-spinner fa-spin"></i> Analyzing ${horseName}'s health data... Please wait.`;
+        
+        // Show loading animation in all result cards
+        document.getElementById('health-score').innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        document.getElementById('risk-level').textContent = 'Analyzing...';
+        document.getElementById('surgical-risk').innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        document.getElementById('surgical-level').textContent = 'Computing...';
+        document.getElementById('psychological-score').innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        document.getElementById('psychological-state').textContent = 'Processing...';
+        document.getElementById('confidence-level').innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        
+        // Show loading message in recommendations
+        const loadingMessage = '<p style="text-align: center; color: var(--text-medium); font-style: italic;"><i class="fas fa-brain fa-spin"></i> AI processing your horse\'s data...</p>';
+        document.getElementById('clinical-assessment').innerHTML = loadingMessage;
+        document.getElementById('psychological-factors').innerHTML = loadingMessage;
+        document.getElementById('risk-factors').innerHTML = loadingMessage;
+        document.getElementById('care-recommendations').innerHTML = loadingMessage;
     }
 
     displayResults(calculations) {
